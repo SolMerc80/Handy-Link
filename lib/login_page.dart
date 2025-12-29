@@ -1,44 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:handy_link/service_provider_signup_page.dart';
-import 'package:handy_link/client_signup_page.dart';
-import 'package:handy_link/login_page.dart';
+import 'package:handy_link/service_provider_login_page.dart';
+import 'package:handy_link/client_login_page.dart';
 
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'HandyLink.',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const MyHomePage(title: 'HandyLink.'),
-    );
-  }
+  State<LoginPage> createState() => _LoginPageState();
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
+class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: const Text('HandyLink'),
+        title: const Text('Login'),
         backgroundColor: Colors.deepPurple,
       ),
       body: Center(
@@ -48,7 +25,7 @@ class _MyHomePageState extends State<MyHomePage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text(
-                'Welcome to HandyLink',
+                'Welcome Back',
                 style: TextStyle(
                   fontSize: 28,
                   fontWeight: FontWeight.bold,
@@ -58,7 +35,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               const SizedBox(height: 40),
               const Text(
-                'Choose your role to continue',
+                'Choose your role to login',
                 style: TextStyle(fontSize: 18, color: Colors.grey),
                 textAlign: TextAlign.center,
               ),
@@ -78,7 +55,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             context,
                             MaterialPageRoute(
                               builder: (context) =>
-                                  const ServiceProviderSignupPage(),
+                                  const ServiceProviderLoginPage(),
                             ),
                           );
                         },
@@ -119,7 +96,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const ClientSignupPage(),
+                              builder: (context) => const ClientLoginPage(),
                             ),
                           );
                         },
@@ -149,23 +126,6 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   ),
                 ],
-              ),
-              const SizedBox(height: 40),
-              TextButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const LoginPage()),
-                  );
-                },
-                child: const Text(
-                  'Already have an account? Login',
-                  style: TextStyle(
-                    fontSize: 16,
-                    color: Colors.deepPurple,
-                    decoration: TextDecoration.underline,
-                  ),
-                ),
               ),
             ],
           ),
