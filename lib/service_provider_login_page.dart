@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:handy_link/service_provider_homepage.dart';
 import 'package:handy_link/service_provider_signup_page.dart';
 
 class ServiceProviderLoginPage extends StatefulWidget {
@@ -104,10 +105,12 @@ class _ServiceProviderLoginPageState extends State<ServiceProviderLoginPage> {
                       ScaffoldMessenger.of(context).showSnackBar(
                         const SnackBar(content: Text('Login successful!')),
                       );
-                      Navigator.popUntil(
+                      Navigator.pushReplacement(
                         context,
-                        (route) => route.isFirst,
-                      ); // Go back to main page
+                        MaterialPageRoute(
+                          builder: (context) => const ServiceProviderHomepage(),
+                        ),
+                      );
                     }
                   },
                   style: ElevatedButton.styleFrom(

@@ -67,7 +67,7 @@ class _ServiceProviderSignupPageState extends State<ServiceProviderSignupPage> {
               ),
               const SizedBox(height: 16),
               DropdownButtonFormField<String>(
-                value: _selectedServiceType,
+                initialValue: _selectedServiceType,
                 decoration: const InputDecoration(
                   labelText: 'Service Type',
                   border: OutlineInputBorder(),
