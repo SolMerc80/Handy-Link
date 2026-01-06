@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:handy_link/service_provider_profile_settings.dart';
 
 
 class ServiceProviderHomepage extends StatelessWidget {
@@ -26,6 +27,12 @@ class ServiceProviderHomepage extends StatelessWidget {
                       title: const Text('Edit profile'),
                       onTap: () {
                         // Navigate to edit profile
+
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const ServiceProviderProfileSettings(),
+                        )
+                      );
                       },
                     ),
                     ListTile(
